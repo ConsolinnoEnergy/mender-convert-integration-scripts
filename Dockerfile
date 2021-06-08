@@ -8,8 +8,10 @@ RUN wget -nc -q https://toolchains.bootlin.com/downloads/releases/toolchains/arm
     && tar -xjf armv6-eabihf--glibc--stable-2018.11-1.tar.bz2 \
     && rm armv6-eabihf--glibc--stable-2018.11-1.tar.bz2
 
+ADD uboot-mender    /work/uboot-mender
 COPY build-uboot-bbb.sh /usr/local/bin/
 COPY build-uboot-rpi.sh /usr/local/bin/
+
 
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]

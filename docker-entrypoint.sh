@@ -19,20 +19,11 @@ set -e
 mkdir -p /work
 cd /work
 
-# Raspberry Pi 0 WiFi
-/usr/local/bin/build-uboot-rpi.sh rpi_0_w_defconfig raspberrypi0w
-cp /work/uboot-mender/integration-binaries/*.tar* /output
+
 
 # Raspberry Pi 3 B/B+
 /usr/local/bin/build-uboot-rpi.sh rpi_3_32b_defconfig raspberrypi3
 cp /work/uboot-mender/integration-binaries/*.tar* /output
 
-# Raspberry Pi 4 B
-/usr/local/bin/build-uboot-rpi.sh rpi_4_32b_defconfig raspberrypi4
-cp /work/uboot-mender/integration-binaries/*.tar* /output
-
-# Beagle Bone Black
-/usr/local/bin/build-uboot-bbb.sh
-cp /work/beaglebone_black*.tar* /output
 
 chown -R --reference /output /output/*

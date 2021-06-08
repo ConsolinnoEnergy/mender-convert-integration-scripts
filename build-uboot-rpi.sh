@@ -44,9 +44,10 @@ arm-buildroot-linux-gnueabihf-gcc --version
 UBOOT_MENDER_BRANCH=2020.01
 
 # Clean-up old builds
-rm -rf uboot-mender
-
-git clone https://github.com/mendersoftware/uboot-mender.git -b mender-rpi-${UBOOT_MENDER_BRANCH}
+#rm -rf uboot-mender
+echo "currently at ${PWD}"
+ls
+#git clone https://github.com/mendersoftware/uboot-mender.git -b mender-rpi-${UBOOT_MENDER_BRANCH}
 cd uboot-mender
 
 make ${rpi_defconfig}
